@@ -1,0 +1,57 @@
+2.1 Picturing 2D vectors
+The 2D world is flat like a piece of paper or a computer screen. In the
+language of math, a flat, 2D space is referred to as a plane. An object
+living in a 2D plane has the two dimensions of height and width but no
+third dimension of depth. Likewise, you can describe locations in 2D by two
+pieces of information: their vertical and horizontal positions. To describe
+the location of points in the plane, you need a reference point. We call
+that special reference point the origin. Figure 2.1 shows this relationship.
+
+2.1 2次元ベクトルの描画
+2次元の世界は、紙やコンピュータの画面のような平面です。数学の言語では、平らな2次元空間を『平面』と呼びます。2次元平面の中にある物体は、高さと幅の2次元を持っていますが、奥行きの3次元はありません。同様に，2次元空間の位置を、2つの情報、すなわち、垂直方向と水平方向の位置で記述できます．平面上の点の位置を記述するためには、基準点が必要です。この特別な基準点を『原点』と呼びます。図2.1にこの関係を示します。
+
+Another point
+もう1つの点
+The origin
+原点
+Figure 2.1 Locating one of several points in the plane, relative to the origin
+図2.1 平面上のいくつかの点のうちの1点を原点を基準に配置する
+
+There are many points to choose from, but we have to fix one of them as our origin. To distinguish it, we mark the origin with an x instead of with a dot as in figure 2.1. From the origin, we can draw an arrow (like the solid one in figure 2.1) to show the relative location of another point. A two-dimensional vector is a point in the plane relative to the origin. Equivalently, you can think of a vector as a straight arrow in the plane; any arrow can be placed to start at the origin, and it indicates a particular point (figure 2.2).
+
+点はたくさんありますが、その中の1つを原点とします。これを区別するために、図2.1のように点ではなく×で印をつけます。この原点から（図2.1の実線のような）矢印を引くと、他の点の相対的な位置を示すことができます。『二次元ベクトル』とは、原点を基準とした平面上の点のことです。同様に、ベクトルは平面上の矢印と考えることができます。どのような矢印でも原点を起点として配置することができ、特定の点を示しています(図2.2)。
+
+An arrow
+矢印
+A plane with an origin
+原点を含む平面
+Superimposed, the arrow indicates a particular point in the plane
+重ねた場合、矢印は平面上の特定の点を示す
+
+Figure 2.2 Superimposing an arrow on the plane indicates a point relative to the origin.
+図2.2 平面上に矢印を重ねると、原点から相対的な点を示す
+
+We’ll use both arrows and points to represent vectors in this chapter and beyond. Points are useful to work with because we can build more interesting drawings out of them. If I connect the points in figure 2.2 as in figure 2.3, I get a drawing of a dinosaur:
+
+この章以降では、矢印と点を使ってベクトルを表現します。点を使うと、より面白い絵を描くことができるので便利です。図2.2の点を図2.3のようにつなげると、恐竜の図ができあがります。
+
+Figure 2.3 Connecting points in the plane to draw a shape
+図2.3 平面上の点をつなげて図形を描く
+
+Any time a 2D or 3D drawing is displayed by a computer, from my modest dinosaur to a feature-length Pixar movie, it is defined by points—or vectors—connected to show the desired shape. To create the drawing you want, you need to pick vectors in the right places, requiring careful measurement. Let’s take a look at how to measure vectors in the plane.
+
+私のちっぽけな恐竜からピクサーの長編映画まで、2次元や3次元の絵がコンピュータに表示されるときはいつでも、目的の形状になるように繋がれた点（またはベクトル）で定義されています。思い通りの図面を作成するためには、適切な場所でベクトルを選択し、慎重に測定する必要があります。ここでは、平面上のベクトルを測定する方法を見てみましょう。
+
+2.1.1 Representing 2D vectors
+2.1.1 2次元ベクトルを描く
+
+With a ruler, we can measure one dimension such as the length of an object. To measure in two dimensions, we need two rulers. These rulers are called axes (the singular is axis), and we lay them out in the plane perpendicular to one another, intersecting at the origin. Drawn with axes, figure 2.4 shows that our dinosaur has the notions of up and down as well as left and right. The horizontal axis is called the x-axis and the vertical one is called the y-axis.
+
+定規があれば、物の長さなどの1寸法を測ることができます。2次元を測るには、2本の定規が必要です。これらの定規を『軸』と呼び、互いに直角な平面上に置いて、原点で交差させます。図2.4は軸を使って描かれたもので、恐竜が左右だけでなく、上下の概念を持っていることを示しています。横軸を『x軸』、縦軸を『y軸』と呼びます。
+
+Figure 2.4 The dinosaur drawn with an x-axis and a y-axis.
+図2.4 x軸、y軸とともに描かれた恐竜。
+
+With axes to orient us, we can say things like, “Four of the points are above and to the right of the origin.” But we’ll want to get more quantitative than that. A ruler has tick marks that show how many units along it we’ve measured. Likewise, in our 2D drawing, we can add grid lines perpendicular to the axes that show where points lie relative to them. By convention, we place the origin at tick 0 on both the x- and y-axes (figure 2.5). In the context of this grid, we can measure vectors in the plane. For example, in figure 2.5, the tip of the dinosaur’s tail lines up with positive 6 on the x-axis and positive 4 on the y-axis. We could think of these distances as centimeters, inches, pixels, or any other unit of length, but usually we leave the units unspecified unless we have a particular application in mind.
+
+方向を示す軸があれば、「点のうち4つが原点の右上にある」と言うことができます。けれども、もっと定量的な情報を得たいです。定規には、測定した単位数を示す目盛りがあります。同様に2次元図面では、軸に垂直なグリッド線を追加することで、点が軸に対してどこにあるかを示すことができます。慣例では、原点をx軸とy軸の両方が目盛り0の位置に置きます(図 2.5)。このグリッドにより、平面上のベクトルを測定することができます。例えば、図2.5では、恐竜の尻尾の先端は、x軸方向に正の6、y軸方向に正の4と並んでいます。これらの距離をセンチメートル、インチ、ピクセル、またはその他の長さの単位として考えることができますが、特定の用途を念頭に置いていない限り、通常は単位を指定しないでおきます。
