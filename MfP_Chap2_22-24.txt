@@ -1,3 +1,22 @@
+Drawing with 2D vectors
+2次元ベクトルでの描画
+
+This chapter covers
+Creating and manipulating 2D drawings as collections of vectors
+Thinking of 2D vectors as arrows, locations, and ordered pairs of coordinates
+Using vector arithmetic to transform shapes in the plane
+Using trigonometry to measure distances and angles in the plane
+
+この章で学ぶこと
+ベクトルの集合体として2次元図面の作成と操作
+2次元ベクトルを矢印や位置、順序付き座標列として考える
+ベクトル演算を使って平面上の形状を変形する
+三角関数を使って平面上の距離や角度を測定する
+
+You probably already have some intuition for what it means to be two-dimensional or three-dimensional. A two-dimensional (2D) object is flat like an image on a piece of paper or a computer screen. It has only the dimensions of height and width. A three-dimensional (3D) object in our physical world, however, has not only height and width but also depth. Models of 2D and 3D entities are important in programming. Anything that shows up on the screen of your phone, tablet, or PC is a 2D object, occupying some width and height of pixels. Any simulation, game, or animation that represents the physical world is stored as 3D data and eventually projected to the two dimensions of the screen. In virtual and augmented reality applications, the 3D models must be paired with real, measured 3D data about the user’s position and perspective. Even though our everyday experience takes place in three dimensions, it's useful to think of some data as higher dimensional. In physics, it’s common to consider time as the fourth dimension. While an object exists at a location in 3D space, an event occurs at a 3D location and at a specified moment. In data science problems, it’s common for data sets to have far more dimensions. For instance, a user tracked on a website can have hundreds of measurable attributes, which describe usage patterns. Grappling with these problems in graphics, physics, and data analysis requires a framework for dealing with data in higher dimensions. This framework is vector mathematics. Vectors are objects that live in multi-dimensional spaces. These have their own notions of arithmetic (adding, multiplying, and so on). We start by studying 2D vectors, which are easy to visualize and compute with. We use a lot of 2D vectors in this book, and we also use them as a mental model when reasoning about higher-dimensional problems.
+
+2次元や3次元とはどういうものなのか、すでにある程度の直感はあると思います。2次元（2D）の物体は、紙やコンピュータの画面上の画像のように平らなものです。高さと幅の寸法しか持っていません。しかし、私たちの物理的な世界にある3次元(3D)の物体は、高さや幅だけでなく、奥行きも持っています。スマホやタブレット、PCの画面に表示されるものはすべて2Dオブジェクトであり、ピクセルの幅と高さを占めています。物理的な世界を表現するシミュレーション、ゲーム、またはアニメーションはすべて3Dデータとして保存され、最終的には画面の2次元に投影されます。仮想現実や拡張現実のアプリケーションでは、3Dモデルは、ユーザーの位置やパースペクティブに関する実際の測定された3Dデータと組み合わせて使用する必要があります。私たちの日常の経験は3次元で行われていますが、いくつかのデータはより高次元であると考えると便利です。物理学では、時間を4次元と考えるのが一般的です。物体が3次元空間のある場所に存在するのに対して、ある事象は3次元のある場所、ある瞬間に発生します。データサイエンスの問題では、データセットがはるかに多くの次元を持つことが一般的です。例えば、ウェブサイトで追跡されたユーザーは、利用パターンを記述する何百もの測定可能な属性を持つことができます。グラフィックス、物理学、およびデータ分析におけるこれらの問題に対処するためには、より高い次元のデータを扱うためのフレームワークが必要です。このフレームワークがベクトル数学です。ベクトルは多次元空間に存在する物体です。これらは、独自の算術（足し算、掛け算など）の概念を持っています。私たちは，可視化しやすく計算しやすい2次元ベクトルを研究することから始めます．本書では2次元ベクトルを多用しており，高次元問題を推論する際のメンタルモデルとしても活用しています．
+
 2.1 Picturing 2D vectors
 2.1 2次元ベクトルを描画する
 
@@ -41,7 +60,7 @@ Figure 2.3 Connecting points in the plane to draw a shape
 
 Any time a 2D or 3D drawing is displayed by a computer, from my modest dinosaur to a feature-length Pixar movie, it is defined by points—or vectors—connected to show the desired shape. To create the drawing you want, you need to pick vectors in the right places, requiring careful measurement. Let’s take a look at how to measure vectors in the plane.
 
-このちっぽけな恐竜からピクサーの長編映画まで、2次元や3次元の絵がコンピュータに表示されるときはいつでも、点、すなわちベクトルで定義されてます。それらは、つなぎ合わされ目的の形状を作り出します。思い通りの図面を作り出すめには、適切な場所にあるベクトルを選び、慎重に位置や長さを決める必要があります。ここでは、平面上のベクトルを定義する方法を見てみましょう。
+このちっぽけな恐竜からピクサーの長編映画まで、2次元や3次元の絵がコンピュータに表示されるときはいつでも、点、すなわちベクトルで定義されてます。それらは、つなぎ合わされ目的の形状を作り出します。思い通りの図面を作り出すためには、適切な場所にあるベクトルを選び、慎重に位置や長さを決める必要があります。ここでは、平面上のベクトルを定義する方法を見てみましょう。
 
 2.1.1 Representing 2D vectors
 2.1.1 2次元ベクトルを描く
