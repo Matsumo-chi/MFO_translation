@@ -15,7 +15,7 @@ Using trigonometry to measure distances and angles in the plane
 
 You probably already have some intuition for what it means to be two-dimensional or three-dimensional. A two-dimensional (2D) object is flat like an image on a piece of paper or a computer screen. It has only the dimensions of height and width. A three-dimensional (3D) object in our physical world, however, has not only height and width but also depth. Models of 2D and 3D entities are important in programming. Anything that shows up on the screen of your phone, tablet, or PC is a 2D object, occupying some width and height of pixels. Any simulation, game, or animation that represents the physical world is stored as 3D data and eventually projected to the two dimensions of the screen. In virtual and augmented reality applications, the 3D models must be paired with real, measured 3D data about the user’s position and perspective. Even though our everyday experience takes place in three dimensions, it's useful to think of some data as higher dimensional. In physics, it’s common to consider time as the fourth dimension. While an object exists at a location in 3D space, an event occurs at a 3D location and at a specified moment. In data science problems, it’s common for data sets to have far more dimensions. For instance, a user tracked on a website can have hundreds of measurable attributes, which describe usage patterns. Grappling with these problems in graphics, physics, and data analysis requires a framework for dealing with data in higher dimensions. This framework is vector mathematics. Vectors are objects that live in multi-dimensional spaces. These have their own notions of arithmetic (adding, multiplying, and so on). We start by studying 2D vectors, which are easy to visualize and compute with. We use a lot of 2D vectors in this book, and we also use them as a mental model when reasoning about higher-dimensional problems.
 
-2次元や3次元がどういうものなのか、すでにある程度の直感があると思います。2次元（2D）の物体は、紙やコンピュータの画面上の画像のように平らなものです。高さと幅の寸法しか持っていません。しかし、私たちの物理的な世界にある3次元(3D)の物体は、高さや幅だけでなく奥行きも持っています。実体を持つ2次元と3次元モデルは、プログラミングにおいて重要です。スマホやタブレット、PCの画面に表示されるものはすべて、ある程度のピクセルの幅と高さの面積を占めている2次元オブジェクトです。ゲームやアニメーションなどの物理的な世界を表現するすべてのシミュレーションは、3次元データとして保存され、最終的にPC画面の2次元空間に投影されます。仮想現実や拡張現実のアプリケーションでの3次元モデルは、ユーザーの位置や視覚に関する実際に測定された3次元データと対になっている必要があります。私たちの日常の経験は3次元で行われていますが、一部のデータはより高次元であると考えると便利です。物理学では、時間を4次元と考えるのが一般的です。物体が3次元空間に存在している間、ある事象は特定の瞬間に3次元の場所で発生します。データサイエンスの問題では、一般にデータセットが非常に多くの次元を持っています。例えば、ウェブサイトで追跡されたユーザーは、利用パターンを説明するための多くの測定可能な属性を持つことができます。画像や、物理学、およびデータ分析におけるこれらの問題に取り組むには、高次元のデータを扱うためのフレームワークが必要です。このフレームワークがベクトル数学です。ベクトルは多次元空間に存在する物体です。これらは、独自の算術（加算、乗算など）の概念を持っています。まず、視覚化と計算が簡単な2Dベクトルを学習します。本書では2次元ベクトルを多用していますが、高次元問題を推論する際のメンタルモデルとしても活用しています。
+2次元や3次元がどういうものなのか、すでにある程度の直感があると思います。『2次元』（2D）の物体は、紙やコンピュータの画面上の画像のように平らなものです。高さと幅の寸法しか持っていません。しかし、私たちの物理的な世界にある『3次元』(3D)の物体は、高さや幅だけでなく奥行きも持っています。実体を持つ2次元と3次元モデルは、プログラミングにおいて重要です。スマホやタブレット、PCの画面に表示されるものはすべて、ある程度のピクセルの幅と高さの面積を占めている2次元オブジェクトです。ゲームやアニメーションなどの物理的な世界を表現するすべてのシミュレーションは、3次元データとして保存され、最終的にPC画面の2次元空間に投影されます。仮想現実や拡張現実のアプリケーションでの3次元モデルは、ユーザーの位置や視覚に関する実際に測定された3次元データと対になっている必要があります。私たちの日常の経験は3次元で行われていますが、一部のデータはより高次元であると考えると便利です。物理学では、時間を4次元と考えるのが一般的です。物体が3次元空間に存在している間、ある事象は特定の瞬間に3次元の場所で発生します。データサイエンスの問題では、一般にデータセットが非常に多くの次元を持っています。例えば、ウェブサイトで追跡されたユーザーは、利用パターンを説明するための多くの測定可能な属性を持つことができます。画像や、物理学、およびデータ分析におけるこれらの問題に取り組むには、高次元のデータを扱うためのフレームワークが必要です。このフレームワークが『ベクトル数学』です。ベクトルは多次元空間に存在する物体です。これらは、独自の算術（加算、乗算など）の概念を持っています。まず、視覚化と計算が簡単な2Dベクトルを学習します。本書では2次元ベクトルを多用していますが、高次元問題を推論する際のメンタルモデルとしても活用しています。
 
 2.1 Picturing 2D vectors
 2.1 2次元ベクトルを描画する
@@ -75,3 +75,46 @@ Figure 2.4 The dinosaur drawn with an x-axis and a y-axis.
 With axes to orient us, we can say things like, “Four of the points are above and to the right of the origin.” But we’ll want to get more quantitative than that. A ruler has tick marks that show how many units along it we’ve measured. Likewise, in our 2D drawing, we can add grid lines perpendicular to the axes that show where points lie relative to them. By convention, we place the origin at tick 0 on both the x- and y-axes (figure 2.5). In the context of this grid, we can measure vectors in the plane. For example, in figure 2.5, the tip of the dinosaur’s tail lines up with positive 6 on the x-axis and positive 4 on the y-axis. We could think of these distances as centimeters, inches, pixels, or any other unit of length, but usually we leave the units unspecified unless we have a particular application in mind.
 
 方向を示す軸があれば、「点のうち4つが原点の右上にある」と言うことができますが、より定量的にしましょう。定規には目盛りがあり、何らかの単位で測定することができます。同様に2次元図面では、軸に垂直なグリッド線を追加することで、点が軸に対してどこにあるかを示すことができます。慣習的には、x軸とy軸の両方の目盛りが0の位置に原点を置きます(図 2.5)。このグリッドにより、平面上のベクトルを測定することができます。例えば、図2.5では、恐竜の尻尾の先端は、x軸の正方向に6、y軸の正方向に4にあります。これらの距離をcm、インチ、ピクセルなどの長さの単位として考えることができますが、特定の用途以外では、通常は単位を指定しないでおきます。
+
+Figure 2.5 Grid lines let us measure the location of points relative to the axes.
+図2.5 グリッド線を使用すると、軸に対する点の位置を測定するできます。
+
+The numbers 6 and 4 are called the x- and y-coordinates of the point, and this is enough to tell us exactly what point we’re talking about. We typically write coordinates as an ordered pair (or tuple) with the x-coordinate first and the y-coordinate second, for example, (6, 4). Figure 2.6 shows how we can now describe the same vector in three ways.
+6と4という数字は、その点の『x座標とy座標』と呼ばれ、これだけでどの点のことを言っているのかがわかります。一般的に座標は、x座標が1番目、y座標が2番目の『順序付きペア』 (または『タプル』) として記述します[例：(6,4)]。図2.6は、同じベクトルを3つの方法で記述する方法を示しています。
+
+1. An ordered pair of numbers (x- and y-coordinates)
+1. 順序付けられた数のペア（x座標とy座標）
+2. A point in the plane relative to the origin
+2. 原点を基準とした平面上の点
+3. An arrow of a specific length in a specific direction
+3. 特定の方向を持つ特定の長さの矢印
+
+Figure 2.6 Three mental models describing the same vector.
+図2.6 同じベクトルを記述する3つのメンタルモデル
+
+From another pair of coordinates like (–3, 4.5), we can find the point in the plane or the arrow that represents them. To get to the point in the plane with these coordinates, start at the origin and then travel three grid lines to the left (because the x-coordinate is –3) and then four and a half grid lines up (where the y-coordinate is 4.5). The point won’t lie at the intersection of two grid lines, but that’s fine; any pair of real numbers gives us some point on the plane. The corresponding arrow will be the straight-line path from the origin to that location, which points up and to the left (northwest, if you prefer). Try drawing this example for yourself as practice!
+(-3, 4.5) のような別の座標のペアによって、平面上の点またはそれを表す矢印を見つけることができます。この座標で平面上の点を求めるには、原点を起点にして、左に3本グリッド線を移動し（x座標が-3なので）、4本半のグリッド線を上に移動します（y座標が4.5なので）。この場合、2本のグリッド線の交点に点はありませんが、それで構いません。対応する矢印は、原点からその位置までの直線経路となり、左上（または北西）を指します。練習としてこの例を描いてみましょう!
+
+2.1.2 2D drawing in Python
+2.1.2 Pythonでの2D描画
+
+When you produce an image on a screen, you’re working in a 2D space. The pixels on the screen are the available points in that plane. These are labeled by whole number coordinates rather than real number coordinates, and you can’t illuminate the space between pixels. That said, most graphics libraries let you work with floating-point coordinates and automatically handle translating graphics to pixels on the screen. We have plenty of language choices and libraries to specify graphics and to get them on the screen: OpenGL, CSS, SVG, and so on. Python has libraries like Pillow and Turtle that are well equipped for creating drawings with vector data. In this chapter, I use a small set of custom-built functions to create drawings, built on top of another Python library called Matplotlib. This lets us focus on using Python to build images with vector data. Once you understand this process, you’ll be able to pick up any of the other libraries easily. The most important function I’ve included, called draw, takes inputs representing geometric objects and keyword arguments specifying how you want your drawing to look. The Python classes listed in table 2.1 represent each kind of drawable geometric object.
+画面上で図形を作成するとき、あなたは2次元空間で作業をしています。画面上のピクセルは、その平面上で利用可能な点です。これらのピクセルは実数座標ではなく整数座標でラベル付けされており、ピクセルの間を参照することはできません。しかし、ほとんどのグラフィックスライブラリでは、浮動小数点座標を扱うことができ、図形を画面上のピクセルに変換する処理を自動的に行うことができます。図形を指定して画面に表示させるためのやライブラリや言語の選択肢は豊富にあります。OpenGL、CSS、SVGなどです。PythonにはPillowやTurtleなどのライブラリがあり、ベクターデータを使って図面を作成ための機能が充実しています。この章では、カスタムビルド関数の小さなセットを使用して図面を作成します。これは、Matplotlibと呼ばれ、別のPythonライブラリの上に構築されたものです。これにより、Pythonでベクターデータを使って図形を作成することに焦点を当てることができます。このプロセスを理解すれば、他のライブラリも簡単に利用できるようになります。ここで紹介した最も重要な関数はdrawと呼ばれるもので、幾何学的なオブジェクトを描画する入力と、描画の見た目を指定するキーワード引数を取ります。表2.1のPythonクラスは、さまざまな種類の描画可能な幾何学的オブジェクトを表しています。
+
+Table 2.1 Some Python classes representing geometric figures, usable with the draw function.
+表2.1 幾何学的な図形を表現するPythonクラス(draw関数で利用可能)
+
+Class Constructor example Description
+
+Polygon Polygon(*vectors)
+Draws a polygon whose vertices (corners) are represented by a list of vectors
+
+Points Points(*vectors)
+Represents a list of points (dots) to draw, one at each of the input vectors
+
+Arrow Arrow(tip) Arrow(tip, tail)
+
+Draws an arrow from the origin to the tip vector or from the tail vector to the head vector if a tail is specified
+
+Segment Segment(start,end) Draws a line segment from the start to the vector
+end
